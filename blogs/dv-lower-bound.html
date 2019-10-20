@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+
+<link rel="stylesheet" href="../css/font-awesome.min.css">
+
+<!-- Bootstrap -->
+<link href="../css/bootstrap.min.css" rel="stylesheet">
+<!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../js/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/menucollapse.js"></script>
+<script type="text/javascript" src="../js/arrow78.js"></script>
+<script type="text/javascript" src="../js/custom.js"></script>
+
+
+  <title>Blogs</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+
+
+<style>
+
+    h2 {
+        text-align: center;
+        margin-bottom: 30px;
+        color: #525354;
+        font-family:Lucida Sans Unicode;
+    }
+
+    h3 {
+        margin-bottom: 20px;
+        color: #525354;
+        font-family:Lucida Sans Unicode;
+    }
+
+    body {
+        background-color: #f7f6f5;
+
+    }
+
+</style>
+</head>
+
+<body>
+
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"  data-target="#bs-example-navbar-collapse-2" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                    <button id="button2" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- <span><a href="#"><img border="0" width="170" src="images/csucy.png"/></a></span> -->
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="margin-right: 5%;">
+                    
+                       
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="page-scroll">
+                            <a onclick="javascript:reset_menus();$('#tab-news-content').show();" href="/index.html" style="font-size:16px">Home</a>
+                        </li>
+                        <li class="page-scroll">
+                            <a onclick="javascript:reset_menus();$('#tab-news-content').show();" href="/blogs.html" style="font-size:16px">Blog</a>
+                        </li>
+                    </ul>
+                </div>
+        
+                <!-- search box submenu --> 
+                <div class="collapse" id="bs-example-navbar-collapse-2">
+                    <gcse:search></gcse:search>
+                </div>
+        
+            </div><!-- /.container-fluid -->
+    </nav>
+
+    <section>
+            <!-- Place this tag where you want the search results to render -->
+            <gcse:searchresults-only></gcse:searchresults-only>
+    </section>
+
+
+    <section id="home" style="padding-top: 40px; margin-left: 22%; margin-right: 22%; 
+     height: 100vh; padding: 3%; background-color: #f8f8f8;">
+        <div>
+            <h2>
+                Donsker-Varadhan Lower Bound
+            </h2>
+    
+            <p>
+                
+                Recently I have been obsessed with the concept of <a href="https://en.wikipedia.org/wiki/Mutual_information">mutual information</a> , in layman terms
+                it signifies the degree of <a href="https://en.wikipedia.org/wiki/Conditional_dependence">dependency</a>  
+                between two variables. I came across an interesting <a href="https://arxiv.org/pdf/1811.04251.pdf">paper</a>
+                 relevant to this concept. More specifically any distribution-free high-confidence lower
+                 bound on mutual information cannot be larger than \(O(\ln(N))\) where \(N\) is
+                 the size of the data sample. This blog will focus only on the computation of a lower bound on
+                 which the paper is built on.
+            </p>
+
+            <h3>Terminology</h3>
+            Before we start to discuss the Donsker-Varadhan lower bound, let us define some of the terminology
+            first. Firstly, we discuss the Kullback–Leibler (KL) divergence, which measures how a probability
+            distribution is different from another distribution. It is defined as
+            \[D_{KL}(P || Q) := \sum_{x \in \mathcal{X}} p(x) \log \frac{p(x)}{q(x)}\]
+            Some of the properties of KL divergence are discussed below
+
+            <ul>
+                <li> \(D_{KL}(P||Q)\) only converges to zero iff \(p(x) = q(x)\)</li>
+                <li>The range of KL divergence is \([0, \infty]\), it cannot be negative</li>
+                <li>\(D_{KL}(P||Q)\) cannot to be considered as a metric, as it is not symmetric
+                        \[D_{KL}(P||Q) \neq D_{KL}(Q||P)\]
+                </li>
+                <li>For KL divergence to be finite, \(p(x)\) should be defined within the 
+                    <a href="https://en.wikipedia.org/wiki/Support_(mathematics)">support</a> (domain) of \(q(x)\).
+                If \(q(x) = 0\) where \(p(x) > 0, D_{KL}(P||Q) = \infty\) </li>
+            </ul>
+
+            Mutual information can also be defined as the KL divergence between two distributions \(p(x, y)\) and
+            \(p(x) p(y)\). If the two variables are indepedent of each other then \(p(x, y) = p(x)p(y), D_{KL} = 0\) and
+            if they are not the divergence between these distribution is a measure of their dependency.
+            \[I(X; Y) := \sum_{x, y} p(x, y) \log \frac{p(x, y)}{p(x)p(y)}\]
+
+            In the subsequent sections we will use this notations \(P_{XY} = p(x, y),\; P_X = p(x),\; P_Y = p(y)\)
+            <h3>Proof</h3>
+
+            Without further ado, we jump right into the proof of the DV bound. We start with the assumption
+            of three distributions \(P, \; Q, \; R\) defined on the same support. The analysis also assumes
+            discrete distributions
+            \[\begin{align*} D_{KL}(P, Q) &= \mathop{\mathbb{E}}_{z \sim P} \ln \frac{p(z)}{q(z)}
+            \\[1em] &= \mathop{\mathbb{E}}_{z \sim P} \ln (\frac{g(z)}{q(z)}\frac{p(z)}{g(z)})
+            \\[1em] &= \mathop{\mathbb{E}}_{z \sim P} \ln \frac{g(z)}{q(z)} + D_{KL}(P||G) 
+            \\[1em]  &\geq \mathop{\mathbb{E}}_{z \sim P} \ln \frac{g(z)}{q(z)} \end{align*}\]
+
+            The equality in the above equation is achieved only when \(p(z) = g(z)\), therefore
+            \[D_{KL}(P||Q) = \sup_G   \mathop{\mathbb{E}}_{z \sim P} \ln \frac{g(z)}{q(z)}\]
+            \(D_{KL}(P||Q)\) becomes the supremum for the set when the equality condition is satisfied. We can
+            parameterize \(G(z)\) such that it can be computed. However, our ultimate aim is to computer
+            \(D_{KL}(P_{XY}|| P_X P_Y) \), where we can only access the distributions via sampling.<br>
+
+            For our problem in mutual information, \(P = p(x, y), \; Q = p(x)p(y)\). For computing the lower
+            bound we follow the given steps
+            <ul>
+                <li>Sample \((x, y) \sim p(x, y)\), is equivalent to sampling from \(P\)</li>
+                <li>Sample \((x, y) \sim p(x, y)\), then ignore \(y\) is equivalent to sampling from \(P_X\) and 
+                    repeat the same for \(P_Y\). The sample \((x, y)\) is then sampled from \(Q = P_XP_Y\).
+                </li>
+                <li>As we cannot evaluate \(Q(z)\; \forall\; (x, y) \sim p(x, y)\), change of variables so that
+                    the equation is restricted only to sampling from \(Q(z)\) by defining \(G(z)\) as 
+                    \[G(z) = \frac{1}{Z} Q(z)e^{F(z)}\;\; \mathrm{, where}\;\; Z = E_{z \sim Q} e^{F(z)}\]
+                </li>
+            </ul>
+
+            Substituting the above formulation in the original divergence equation gives 
+            \[D_{KL}(P||Q) = \sup_{F} \mathop{\mathbb{E}}_{z \sim P} F(z) - \ln \mathop{\mathbb{E}}_{z \sim Q} e^{F(z)}\]
+            The above equation is the Donsker-Varadhan Lower bound, and this can be applied to mutual information.
+            \[\begin{align*} I(X, Y) &= D_{KL} (P_{X, Y}|| P_XP_Y)
+            \\[1em] &= \sup_{F}  E_{x, y \sim p(x, y)} F(x, y) - \ln E_{x \sim p(x), y \sim p(y)} e^{F(x, y)}\end{align*}\]
+
+            \(F\) is an unconstrained function in the above equation. This DV lower bound can be used as a loss function
+            for maximizing mutual information through stochastic gradient descent via sampling.
+
+            <h3>References</h3>
+            <ul>
+                <li><a href="https://arxiv.org/pdf/1811.04251.pdf">Formal Limitations on The Measurement of
+                        Mutual Information</a></li>
+                <li><a href="https://web.stanford.edu/class/stats311/lecture-notes.pdf">Stanford Statistics Lecture notes</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <hr class="star-primary">
+    <footer>
+        <small>
+        <center>
+            © 2019 | Somnath Basu Roy Chowdhury. Credits: AR template
+        <!--  -->
+        </center>
+        </small>
+    </footer>
+</body>
+</html>
