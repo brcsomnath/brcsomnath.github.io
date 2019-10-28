@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>[Somnath Basu Roy Chowdhury]</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../images/light-bulb.png">
+
+<link rel="stylesheet" href="../css/font-awesome.min.css">
+
+<!-- Bootstrap -->
+<link href="../css/bootstrap.min.css" rel="stylesheet">
+<!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../js/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/menucollapse.js"></script>
+<script type="text/javascript" src="../js/arrow78.js"></script>
+<script type="text/javascript" src="../js/custom.js"></script>
+
+
+  <title>Blogs</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+
+
+<style>
+
+    h2 {
+        text-align: center;
+        margin-bottom: 30px;
+        color: #525354;
+        font-family:Lucida Sans Unicode;
+    }
+
+    h3 {
+        margin-bottom: 20px;
+        color: #525354;
+        font-family:Lucida Sans Unicode;
+    }
+
+    h4 {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        color: #525354;
+        font-family:Lucida Sans Unicode;
+    }
+
+    body {
+        background-color: #f7f6f5;
+
+    }
+
+</style>
+</head>
+
+<body>
+
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"  data-target="#bs-example-navbar-collapse-2" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                    <button id="button2" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- <span><a href="#"><img border="0" width="170" src="images/csucy.png"/></a></span> -->
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="margin-right: 5%;">
+                    
+                       
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="page-scroll">
+                            <a onclick="javascript:reset_menus();$('#tab-news-content').show();" href="/index.html" style="font-size:16px">Home</a>
+                        </li>
+                        <li class="page-scroll">
+                            <a onclick="javascript:reset_menus();$('#tab-news-content').show();" href="/blogs.html" style="font-size:16px">Blog</a>
+                        </li>
+                    </ul>
+                </div>
+        
+                <!-- search box submenu --> 
+                <div class="collapse" id="bs-example-navbar-collapse-2">
+                    <gcse:search></gcse:search>
+                </div>
+        
+            </div><!-- /.container-fluid -->
+    </nav>
+
+    <section>
+            <!-- Place this tag where you want the search results to render -->
+            <gcse:searchresults-only></gcse:searchresults-only>
+    </section>
+
+
+    <section id="home" style="padding-top: 40px; margin-left: 22%; margin-right: 22%; 
+     height: 100vh; padding: 3%; background-color: #f8f8f8;">
+        <div>
+            <h2>
+                Multiple Hypothesis Testing
+            </h2>
+
+            Hypothesis testing is a commonnly used method in statistics where we run tests to check whether
+            a null hypothesis \(H_0\) is true or should we accept the alternate hypothesis \(H_1\). In cases,
+            where there are multiple (\(m\)) null hypotheses, it is not possible to determine which of the \(m\) 
+            hypotheses are acceptable using a single test.
+
+            <h3>Background</h3>
+            To give an idea of why multiple testing is important, let us revise some basic concepts to back up.
+            Let's start with the definition of Type I and Type II errors<br><br>
+
+
+            <p style="text-align:center;">
+                <img src="../images/t1-t2.png" alt="" height="50%" width="50%"><br>
+                (Source: <a href="https://en.wikipedia.org/wiki/Type_I_and_type_II_errors">wiki</a>)
+            </p>
+
+            From the above table we conclude that Type I error, \(\alpha = \)Pr( rejecting a null hypothesis by mistake ).
+            This error becomes significant when performing multiple hypothesis testing.
+            \[\mathrm{Pr(Not\;making\;an\;error)} = 1-\alpha\]
+            \[\mathrm{Pr(Not\;making\;an\;error\;in\;m\;tests)} = (1-\alpha)^m\]
+            \[\mathrm{Pr(Atleast\;making\;1\;error\;in\;m\;tests)} = 1-(1-\alpha)^m\]
+
+            <p style="text-align:center;">
+                <img src="../images/fp-rate.png" alt="" height="40%" width="40%"><br>
+                (Source: <a href="https://www.gs.washington.edu/academics/courses/akey/56008/lecture/lecture10.pdf">lecture notes</a>)
+            </p>
+
+            From the above graph we can see that the probability of making at least one error reaches almost 1 
+            for all higher values of \(m\). In this blog, we will discuss various techniques to tackle this 
+            problem.
+
+            <h3>Terminology</h3>
+            Before discussing the formal techniques to tackle the issue of multiple hypothesis testing, we 
+            need to get familiarized with various metrics known for this problem statement. All of these metrics
+            aim at controlling the Type I error rate of the overall statistical test. We use the given notations:<br>
+            \(V = \) #{type 1 errors} [false positives], \(R = \) #{times null hypotheses are rejected},
+            \(m = \) #{hypotheses}<br> <br>
+
+            <ul>
+                <li>
+                    <b>Per comparison error rate (PCER)</b>: It is an estimate of the rate of false positives
+                    per hypothesis
+                    \[\mathrm{PCER} = \frac{\mathbb{E}(V)}{m}\]
+                </li>
+                <li>
+                    <b>Per-family error rate (PFER)</b>: It is the expected number of type I errors (per family 
+                    denotes the family of null hypotheses under consideration)
+                    \[\mathrm{PFER} = \mathbb{E}(V)\]
+                </li>
+                <li>
+                    <b>Family-wise error rate (FWER)</b>: It is the probability of making at least one Type I error.
+                    This measure is useful in many of the techniques we will discuss later
+                    \[\mathrm{FWER} = P(V \geq 1)\]
+                </li>
+                <li>
+                    <b>False Discovery Rate (FDR)</b>: It is the expected proportion of Type I errors among the 
+                    rejected hypotheses. The probability term is introduced compensate as the rest
+                    of the expression becomes 1 when \(R = 0\).
+                    \[\mathrm{FDR} = \mathbb{E}(\frac{V}{R} | R > 0) P(R > 0)\]
+                </li>
+                <li>
+                    <b>Positive false discovery rate (pFDR)</b>: The rate at which rejected discoveries are false
+                    positives, given \(R\) is positive
+                    \[\mathrm{pFDR} = \mathbb{E}(\frac{V}{R} | R > 0)\]
+                </li>
+            </ul>
+
+            <h3>Multiple Testing</h3>
+
+            In this section, we will discuss the various techniques found in literature for controlling
+            Type I error rate. Before we start the process, we need to have a threshold error rate \(\alpha\)
+            which we want our overall experiment to meet. We can either have a prior standard which we want 
+            our statistical test to meet or figure out one experimentally by permuting the labels of the 
+            test.
+
+            <h3>FWER based methods</h3>
+            One of the popular ways to control the Type I error rate is by controlling the FWER metric 
+            \(P(V \geq 1)\). There are two approaches to achieving this control
+            <ul>
+                <li>
+                    <b>Single Step</b>: Equal adjustments made to all \(p\)-values based on the threshold \(\alpha\)
+                </li>
+                <li>
+                    <b>Sequential</b>: Adaptive adjustments made sequentially to each \(p\)-value
+                </li>
+            </ul><br>
+
+            <h4>Bonferroni Correction</h4>
+            This method follows the single-step approach to adjusting the \(p\)-values of the null
+            hypotheses. Given a family of hypotheses \(\{H_1, \ldots, H_m\}\) and their corresponding
+            \(p\)-values \(\{p_1, \ldots, p_m\}\), let \(m_0\) be the number of true hypothesis.
+            Bonferroni Correction simply rejects any hypothesis \(H_i\) which meets the following criteria
+
+            \[p_i \leq \frac{\alpha}{m}\]
+
+            thereby, the overall FWER \(\leq \alpha\) in all situations. This technique doesn't
+            rely on any assumption on the dependence among the hypotheses. <br>
+
+            <b>Proof</b>: Using <a href="https://en.wikipedia.org/wiki/Boole%27s_inequality">Boole's Inequality</a><br>
+            \[\mathrm{FWER} = P\{\cup_{i=1}^{m_0}\left(p_i \leq \frac{\alpha}{m}\right)\}
+                            \leq \sum_{i=1}^{m_0}P\left(p_i \leq \frac{\alpha}{m}\right)
+                            = m_0 \frac{\alpha}{m}
+                            \leq m \frac{\alpha}{m}
+                            = \alpha\]<br>
+
+            <h4>Holm-Bonferroni Correction</h4>
+            This method follows sequential update technique. This technique was introduced to overcome a few
+            shortcomings of the Bonferroni correction. The Bonferroni method is counter-intuitive as selection
+            of a particular hypothesis is dependent on the total number of hypotheses and it also leads to 
+            high type 2 error rates as the chances of selecting a false hypothesis is high. Holm-Bonferroni Correction
+            consists of the following steps
+            <ul>
+                <li>Order the unadjusted \(p\)-values such that \(p_1 \leq p_2 \leq \ldots \leq p_m\)</li>
+                <li>Given a type I error rate \(\alpha\), let \(k\) be the minimal index such that 
+                    \[p_k \leq \frac{\alpha}{m - k + 1}\]</li>
+                <li>Reject all null hypotheses \(H_1, \ldots, H_{k-1}\) and accept the hypotheses \(H_k, \ldots, H_{m}\)</li>
+                <li>In case \(k = 1\), accept all null hypotheses</li>
+            </ul>
+
+            <b>Proof</b>: We have to show that even if we incorrectly reject a true hypothesis the probability of that
+            occurring is at most \(\alpha\). Proving the same by contradiction<br>
+            
+            Suppose we incorrectly reject a true hypothesis. Let us assume \(h\) is the first true hypothesis to 
+            be rejected and we have \(m_0\) true hypotheses. Then we have 
+            \[\begin{align*}h - 1 &\leq m - m_0
+                            \\m_0 &\leq m -h + 1
+                            \\\frac{1}{m - h + 1} &\leq \frac{1}{m_0}\end{align*}\]
+
+            \(p_h\) was rejected as \(p_h \leq \frac{\alpha}{m - h + 1}\), using the above equation we find that
+            the upper bound for \(p_h \leq \frac{\alpha}{m_0}\). Let \(I_0\) be the set of indices which represent
+            the true null hypothesis. We define another random variable 
+            \[A = \{p_i \leq \frac{\alpha}{m_0},\; \forall i \in I_0\}\]
+            From Bonferroni's Inequality, we find that \(P(A) \leq \alpha\)
+
+            <h3>FDR based methods</h3>
+
+            In many cases, we can afford to have a few false positives and we wish to focus on the type II error
+            as well. In these scenarios, trying to restrict the FDR is a better option. FDR is designed to 
+            control the proportion of false positives among a set of rejected samples \(R\).
+            \[\mathrm{FDR} = \frac{V}{R}\]
+            In this section, we will discuss one such method to control the FDR.<br>
+
+            <h4>Benjamini and Hochberg</h4>
+            This method aims at controlling the FDR level \(\delta\) by using the following steps
+            <ul>
+                <li>Order the unadjusted \(p\)-values such that \(p_1 \leq p_2 \leq \ldots \leq p_m\)</li>
+                <li>Given a type I error rate \(\delta\), let \(k\) be the minimal index such that 
+                    \[p_j \leq \delta\frac{j}{m}\]</li>
+                <li>Reject all null hypotheses \(H_1, \ldots, H_{j-1}\) and accept the hypotheses \(H_j, \ldots, H_{m}\)</li>
+            </ul>
+
+            There are other methods of control using pFDR which can also be used to control the error rates 
+            in multiple hypothesis testing problem. The discussion of those are out of the scope of this blog.
+
+
+    
+            
+            <h3>References</h3>
+            <ul>
+                <li><a href="https://en.wikipedia.org/wiki/Type_I_and_type_II_errors">Type I and II errors</a></li>
+                <li><a href="https://statweb.stanford.edu/~candes/stats300c/Lectures/Lecture7.pdf">False Discovery Rate</a></li>
+                <li><a href="https://www.gs.washington.edu/academics/courses/akey/56008/lecture/lecture10.pdf">Multiple Testing</a></li>
+            </ul>
+        </div>
+    </section>
+</body>
+</html>
