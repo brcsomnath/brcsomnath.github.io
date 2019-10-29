@@ -234,7 +234,7 @@
             consists of the following steps
             <ul>
                 <li>Order the unadjusted \(p\)-values such that \(p_1 \leq p_2 \leq \ldots \leq p_m\)</li>
-                <li>Given a type I error rate \(\alpha\), let \(k\) be the minimal index such that 
+                <li>Given a type I error rate \(\alpha\), let \(k\) be the maximal index such that 
                     \[p_k \leq \frac{\alpha}{m - k + 1}\]</li>
                 <li>Reject all null hypotheses \(H_1, \ldots, H_{k-1}\) and accept the hypotheses \(H_k, \ldots, H_{m}\)</li>
                 <li>In case \(k = 1\), accept all null hypotheses</li>
@@ -267,7 +267,7 @@
             This method aims at controlling the FDR level \(\delta\) by using the following steps
             <ul>
                 <li>Order the unadjusted \(p\)-values such that \(p_1 \leq p_2 \leq \ldots \leq p_m\)</li>
-                <li>Given a type I error rate \(\delta\), let \(k\) be the minimal index such that 
+                <li>Given a type I error rate \(\delta\), let \(k\) be the maximal index such that 
                     \[p_j \leq \delta\frac{j}{m}\]</li>
                 <li>Reject all null hypotheses \(H_1, \ldots, H_{j-1}\) and accept the hypotheses \(H_j, \ldots, H_{m}\)</li>
             </ul>
