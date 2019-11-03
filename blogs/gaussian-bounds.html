@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>[Somnath Basu Roy Chowdhury]</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../images/light-bulb.png">
+
+<link rel="stylesheet" href="../css/font-awesome.min.css">
+
+<!-- Bootstrap -->
+<link href="../css/bootstrap.min.css" rel="stylesheet">
+<!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../js/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/menucollapse.js"></script>
+<script type="text/javascript" src="../js/arrow78.js"></script>
+<script type="text/javascript" src="../js/custom.js"></script>
+
+
+  <title>Blogs</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+
+
+<style>
+
+    h2 {
+        text-align: center;
+        margin-bottom: 30px;
+        color: #525354;
+        font-family:Lucida Sans Unicode;
+    }
+
+    h3 {
+        margin-bottom: 20px;
+        color: #525354;
+        font-family:Lucida Sans Unicode;
+    }
+
+    body {
+        background-color: #f7f6f5;
+
+    }
+
+</style>
+</head>
+
+<body>
+
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"  data-target="#bs-example-navbar-collapse-2" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                    <button id="button2" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- <span><a href="#"><img border="0" width="170" src="images/csucy.png"/></a></span> -->
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="margin-right: 5%;">
+                    
+                       
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="page-scroll">
+                            <a onclick="javascript:reset_menus();$('#tab-news-content').show();" href="/index.html" style="font-size:16px">Home</a>
+                        </li>
+                        <li class="page-scroll">
+                            <a onclick="javascript:reset_menus();$('#tab-news-content').show();" href="/blogs.html" style="font-size:16px">Blog</a>
+                        </li>
+                    </ul>
+                </div>
+        
+                <!-- search box submenu --> 
+                <div class="collapse" id="bs-example-navbar-collapse-2">
+                    <gcse:search></gcse:search>
+                </div>
+        
+            </div><!-- /.container-fluid -->
+    </nav>
+
+    <section>
+            <!-- Place this tag where you want the search results to render -->
+            <gcse:searchresults-only></gcse:searchresults-only>
+    </section>
+
+
+    <section id="home" style="padding-top: 40px; margin-left: 22%; margin-right: 22%; 
+     height: 100vh; padding: 3%; background-color: #f8f8f8;">
+        <div>
+            <h2>
+                Gaussian tail bounds
+            </h2>
+    
+            <p>
+            Before we even start with gaussian distributions and figuring out their bounds, we will go over 
+            some basic probability theory inequalities. In this section we start off with the Markov's 
+            and Chebyshev's Inequality.
+            </p>
+            Notation: \(P[\cdot]\) denotes the Cumulative Density Function (CDF) and \(p(\cdot)\) denotes
+            the PDF <br>
+
+            <i>Markov's Inequality</i>: \(P[x \geq t] \leq \dfrac{\mathrm{E}[x]}{t}\)<br>
+
+            Proof: \[\begin{align*} \mathrm{E}(X) &= \int_{-\infty}^{\infty} xp(x) dx\\
+                    &= \int_{-\infty}^{t} xp(x) dx + \int_{t}^{\infty} xp(x)dx\\
+                    &\geq \int_{t}^{\infty} xp(x)dx\\
+                    &\geq t\int_{t}^{\infty} p(x)dx\\
+                    &= tP[X \geq t]\\ \end{align*}\]
+            \[P[X \geq t] \leq \dfrac{\mathrm{E}[x]}{t}\]
+
+            <i>Chebyshev's Inequality</i>: \(P[|x - \mu| \geq t] \leq \dfrac{\mathrm{var}[x]}{t^2}\)<br>
+
+            Proof: \[\begin{align*} \sigma^2 &= \mathrm{var}[x]\\
+                    &= \int_{-\infty}^{\infty} (x - \mu)^2p(x) dx\\
+                    &\geq \int_{-\infty}^{\mu - t} (x-\mu)^2p(x) dx + \int_{\mu + t}^{\infty} (x-\mu)^2p(x)dx\\
+                    &\geq t^2\int_{-\infty}^{\mu - t} p(x) dx + t^2\int_{\mu + t}^{\infty} p(x)dx\\
+                    &= t^2 P[X \leq \mu - t\; \mathrm{or}\; X \geq \mu + t]\\
+                    &= t^2 P[|X - \mu| \geq t]\\ \end{align*}\]
+            \[P[X \geq t] \leq \dfrac{\mathrm{var}[x]}{t^2}\]
+
+        Both the bounds described above are sharp and cannot be improved further. Similar technique
+        can be extended to any integer \(k \geq 1\) to obtain the following result
+        \[P[X \geq t] \leq \dfrac{\mathrm{E}[|x - \mu|^k]}{t^k}\]
+
+        Next, we will utilize <a href="https://en.wikipedia.org/wiki/Moment-generating_function">moment 
+        generating functions</a> to prove another useful bound known as the <i>Chernoff bound</i>.
+        Suppose that the random variable \(X\) has a moment generating
+        function in a neighborhood of zero, meaning that that there is some constant \(b > 0\)
+        such that the function \(\phi(\lambda) = \mathrm{E}[e^{\lambda(X−\mu)}]\)  exists \(\forall \lambda \leq |b|\).
+        Using markov's inequality we obtain
+        \[P[(X-\mu) \geq t] = P[e^{(X-\mu)} \geq e^t] \leq \dfrac{\mathrm{E}[e^{\lambda(X-\mu)}]}{e^{\lambda t}}\]
+        Optimization over \(\lambda\) yields the Chernoff's bound
+        
+        \[\log P[e^{\lambda (x - \mu)} \geq e^{\lambda t}] \leq -\sup_{\lambda \in [0, b]} \{
+            \lambda t - \log \mathrm{E}[e^{\lambda(x - \mu)}]\} \]
+
+
+        <h3>Gaussian tail</h3>
+        Now that we have enough context, we can proceed to our primary objective at hand. In obtaining the 
+        gaussian tail bound we would be leveraging the above inequalities quite a lot. Let us consider a random
+        variable \(X \sim N(\mu, \sigma^2)\). We calculate the expectation of the moment generating function as
+        \[\mathrm{E}[e^{\lambda x}] = e^{\mu \lambda + \frac{\sigma^2 \lambda^2}{2}} \]
+
+        Substituting  the above result in the Chernoff bound we get
+        \[\begin{align*} \log P[e^{\lambda (x - \mu)} &\geq e^{\lambda t}] \leq -\sup_{\lambda \in [0, b]} \{
+            \lambda t - \log \mathrm{E}[e^{\frac{\sigma^2 \lambda^2}{2}}]\\
+            &=  -\sup_{\lambda \in [0, b]} \{
+                \lambda t - \frac{\sigma^2 \lambda^2}{2}\} \\ \end{align*}\]
+
+        Differentiating the expression inside, we get \(\lambda = \dfrac{t}{\sigma^2}\) for which the above term is 
+        maximized. Substituting the \(\lambda\) value in the above equation
+
+        \[\begin{align*} \log P[e^{\lambda (x - \mu)}] &\geq -\frac{t^2}{2\sigma^2} \end{align*}\]
+        \[P[e^{\lambda (x - \mu)}] \geq e^{-\frac{t^2}{2\sigma^2}}\]
+
+        The above bound is tight upto certain level of polynomial factor. Okay, we have reached the end of this blog, these
+        bounds are quite useful in understanding many similar bounds for sub-gaussian random variables, which I will
+        hopefully cover in a later blog.
+            
+
+            <h3>References</h3>
+            <ul>
+                <li><a href="https://ocw.mit.edu/courses/mathematics/18-s997-high-dimensional-statistics-spring-2015/lecture-notes/">MIT High dimensional Statistics</a></li>
+                <li><a href="https://www.stat.berkeley.edu/~mjwain/stat210b/">Berkeley Mathematical Statistics</a></li>
+                <li><a href="http://www.stat.yale.edu/~pollard/Books/Mini/">Yale Statistics</a></li>
+            </ul>
+        </div>
+    </section>
+
+</body>
+</html>
