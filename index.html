@@ -68,172 +68,237 @@
 
 <body id="page-top" class="index" style="zoom: 90%;">
 
-<!-- Navigation -->
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"  data-target="#bs-example-navbar-collapse-2" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="glyphicon glyphicon-search"></span>
-            </button>
-            <button id="button2" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <!-- <span><a href="#"><img border="0" width="170" src="images/csucy.png"/></a></span> -->
-        </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="margin-right: 5%;">
-            <ul class="nav navbar-nav navbar-right">
-                <li class="page-scroll">
-                    <a onclick="javascript:reset_menus();$('#tab-news-content').show();" href="/index.html" style="font-size:16px">Home</a>
-                </li>
-                <li class="page-scroll">
-                    <a onclick="javascript:reset_menus();$('#tab-news-content').show();" href="/blogs.html" style="font-size:16px">Blog</a>
-                </li>
-            </ul>
-        </div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-2" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="glyphicon glyphicon-search"></span>
+                </button>
+                <button id="button2" type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- <span><a href="#"><img border="0" width="170" src="images/csucy.png"/></a></span> -->
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="margin-right: 5%;">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="page-scroll">
+                        <a onclick="javascript:reset_menus();$('#tab-news-content').show();" href="/index.html"
+                            style="font-size:16px">Home</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a onclick="javascript:reset_menus();$('#tab-news-content').show();" href="/blogs.html"
+                            style="font-size:16px">Blog</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a onclick="javascript:reset_menus();$('#tab-news-content').show();" href="/books.html"
+                            style="font-size:16px">Books</a>
+                    </li>
+                </ul>
+            </div>
 
-        <!-- search box submenu --> 
-        <div class="collapse" id="bs-example-navbar-collapse-2">
-            <gcse:search></gcse:search>
-        </div>
+            <!-- search box submenu -->
+            <div class="collapse" id="bs-example-navbar-collapse-2">
+                <gcse:search></gcse:search>
+            </div>
 
-    </div><!-- /.container-fluid -->
-</nav>
+        </div><!-- /.container-fluid -->
+    </nav>
 
-<section>
-    <!-- Place this tag where you want the search results to render -->
-    <gcse:searchresults-only></gcse:searchresults-only>
-</section>
+    <section>
+        <!-- Place this tag where you want the search results to render -->
+        <gcse:searchresults-only></gcse:searchresults-only>
+    </section>
 
-<!-- Home Section -->
-<section id="home" style="margin-top:40px; margin-left: 15%; margin-right: 15%">
-<div class="container">
-        <div align="left" class="col-md-3">
-            <!-- <a target="_blank" href=""> -->
+    <!-- Home Section -->
+    <section id="home" style="margin-top:40px; margin-left: 15%; margin-right: 15%">
+        <div class="container">
+            <div align="left" class="col-md-3">
+                <!-- <a target="_blank" href=""> -->
                 <img id="mobile-img" src="images/frame.png" width="200" border="0" height="200" alt="">
-        </div>
-        <div align="left" class="col-md-4">
-            <h3>Somnath Basu Roy Chowdhury
-                <h5>Indian Institute of Technology (IIT) Kharagpur</h5></h3>
+            </div>
+            <div align="left" class="col-md-4">
+                <h3>Somnath Basu Roy Chowdhury
+                    <h5>Indian Institute of Technology (IIT) Kharagpur</h5>
+                </h3>
 
-            <h4>Software Engineer<br>
-            Microsoft<br>
-            Hyderabad, India <br>
-            Email:
-            <script language="JavaScript">
-                <!--
-                document.write("&nbsp;");
-                spiderjam('brcsomnath','gmail.com');
-                -->
-            </script><br/>            
-            </h4>
-        </div>
-
-    </div>
-</section>
-
-<!-- Home Section -->
-<section id="intro">
-    <div class="container lead">
-        <div style="text-align: left; margin-top:10px" class="col-md-12">
-            <!--<h2>Welcome!</h2>-->
-
-            <i class="noshow" style="display:none;" id="tab-1">
-            <button class="btn btn-default btn-lg btn-block" style="display: block; width: 100%;" onclick="javascript:$('#tab-1-content').toggle();">Introduction <span class="glyphicon glyphicon-chevron-right"></span></button>
-            </i>
-
-            <div class="allshow" style="display:none;" id="tab-1-content">
-            <hr class="star-primary">
-
-            <p class="lead">I am a Software Engineer at <a target="_blank" href="https://www.microsoft.com/en-in/">Microsoft</a>, working with the <a target="_blank" href="https://www.bing.com/">Bing</a> AI team. I spent a year
-                at <a target="_blank" href="https://www.apple.com/">Apple</a>, working on Security Engineering. I graduated from <a target="_blank" href="http://www.iitkgp.ac.in/">Indian Institute of Technology Kharagpur</a> with a Dual Degree (Bachelors+Masters)  Hons. in <a target="_blank" href="http://www.ee.iitkgp.ac.in/">Electrical Engineering</a>,
-                minor in <a target="_blank" href="http://cse.iitkgp.ac.in/">Computer Science and Engineering</a> and micro-specialization in <a target="_blank" href="http://www.iitkgp.ac.in/department/GS">Embedded Wireless Systems</a>. During my final year, I collaborated with <a target="_blank" href="http://sml.csa.iisc.ernet.in/SML/index.html">Statistical Machine Learning Group</a> 
-                at <a target="_blank" href="https://www.iisc.ac.in/">Indian Institute of Science</a>, tackling problems relating to Knowledge Graphs in NLP, for over a year .   
-            </p>
-            <p>
-            My research interests include <i>Machine Learning and Natural Language Processing</i>, particularly Statistical Learning, Reinforcement Learning, Scalable Deep Learning
-            and its applications in the domain of NLP.
-            </p>
-
-            <p>
-               <a target="_blank" href="files/CV.pdf" class="btn btn-primary">CV (PDF)&raquo;</a>
+                <h4>Data Scientist<br>
+                    Microsoft<br>
+                    Hyderabad, India <br>
+                    Email:
+                    <script language="JavaScript">
+                < !--
+                            document.write("&nbsp;");
+                        spiderjam('brcsomnath', 'gmail.com');
+                        -->
+                    </script><br />
+                </h4>
             </div>
 
         </div>
-    </div>
-</section>
+    </section>
 
+    <!-- Home Section -->
+    <section id="intro">
+        <div class="container lead">
+            <div style="text-align: left; margin-top:10px" class="col-md-12">
+                <!--<h2>Welcome!</h2>-->
 
-<!-- Research Section -->
-<section id="organization">
-    <div class="container lead">
-        <div style="text-align: left; margin-top:10px" class="col-md-12">
-            <hr class="star-primary">
-            <h2>Organizations</h2><br>
-            <img id="mobile-img" src="images/microsoft.png" border="0" height="160" alt="" style="margin: 2% -0px 10px 10px">
-            <img id="mobile-img" src="images/apple.png" border="0" height="200" alt="" style="margin: 0px 10px">
-            <img id="mobile-img" src="images/iitkgp.png" border="0" height="200" alt="" style="margin: 0px 10px">
-        </div>
-    </div>
-</section>
+                <i class="noshow" style="display:none;" id="tab-1">
+                    <button class="btn btn-default btn-lg btn-block" style="display: block; width: 100%;"
+                        onclick="javascript:$('#tab-1-content').toggle();">Introduction <span
+                            class="glyphicon glyphicon-chevron-right"></span></button>
+                </i>
 
-<!-- Research Section -->
-<section id="publications">
-    <div class="container lead">
-        <div style="text-align: left; margin-top:10px" class="col-md-12">
+                <div class="allshow" style="display:none;" id="tab-1-content">
+                    <hr class="star-primary">
 
-            <i class="noshow" style="display:none;" id="tab-3">
-                <button class="btn btn-default btn-lg btn-block" style="display: block; width: 100%;" onclick="javascript:$('#tab-3-content').toggle();">Publications  <span class="glyphicon glyphicon-chevron-right"></span></button>
-            </i>
-            <div class="allshow" style="display:none;" id="tab-3-content">
-            <hr class="star-primary">
+                    <p class="lead">I am a Data Scientist at <a target="_blank"
+                            href="https://www.microsoft.com/en-in/">Microsoft</a>, working with the <a target="_blank"
+                            href="https://www.bing.com/">Bing</a> AI team. I spent a year
+                        at <a target="_blank" href="https://www.apple.com/">Apple</a>, working on Security Engineering.
+                        I graduated from <a target="_blank" href="http://www.iitkgp.ac.in/">Indian Institute of
+                            Technology Kharagpur</a> with a Dual Degree (Bachelors+Masters) Hons. in <a target="_blank"
+                            href="http://www.ee.iitkgp.ac.in/">Electrical Engineering</a>,
+                        minor in <a target="_blank" href="http://cse.iitkgp.ac.in/">Computer Science and Engineering</a>
+                        and micro-specialization in <a target="_blank"
+                            href="http://www.iitkgp.ac.in/department/GS">Embedded Wireless Systems</a>. During my final
+                        year, I collaborated with <a target="_blank"
+                            href="http://sml.csa.iisc.ernet.in/SML/index.html">Statistical Machine Learning Group</a>
+                        at <a target="_blank" href="https://www.iisc.ac.in/">Indian Institute of Science</a>, tackling
+                        problems relating to Knowledge Graphs in NLP, for over a year .
+                    </p>
+                    <p>
+                        My research interests include <i>Machine Learning and Natural Language Processing</i>,
+                        particularly Statistical Learning, Reinforcement Learning, Scalable Deep Learning
+                        and its applications in the domain of NLP.
+                    </p>
 
-            <h2>Selected Publications <a target="_blank" href="https://scholar.google.co.in/citations?user=xGbyrIUAAAAJ&hl=en" class="btn btn-primary">All Publications&raquo;</a></h2>
-            <h4>
-            <span class="label label-danger">
-                <a target="_blank" href="https://en.wikipedia.org/wiki/H-index"><font color=white>h-index</font></a>: 3
-            </span>&nbsp;
-            <span class="label label-danger">
-               <a target="_blank" href="https://scholar.google.com/citations?user=HCxwGIkAAAAJ&hl=en"><font color=white>Citations</font></a>: 40
-            </span>&nbsp;
-            <span class="label label-danger">
-                <a target="_blank" href="https://en.wikipedia.org/wiki/Erd&ouml;s_number"><font color="white">Erd&ouml;s #</font></a>: 5
-            </span>
-            </h4>
+                    <p>
+                        <a target="_blank" href="files/CV.pdf" class="btn btn-primary">CV (PDF)&raquo;</a>
+                </div>
 
-            <ul>
-                <li><span class="label label-success">EMNLP '19</span> <a target="_blank" href="https://arxiv.org/pdf/1802.05934.pdf">"Instance-based Inductive Deep Transfer Learning by
-                    Cross-Dataset Querying with Locality Sensitive Hashing"</a>, Somnath Basu Roy Chowdhury, K M Annervaz and Ambedkar Dukkipati. Proceedings of <b>DeepLo Workshop EMNLP 2019</b>, at  Hong  Kong. <font color="red">(<i>Long Paper</i>)</font>.</li>
-                 <li><span class="label label-success">NAACL-HLT '18</span> <a target="_blank" href="http://aclweb.org/anthology/N18-1029">"Learning beyond datasets: Knowledge Graph Augmented Neural Networks for Natural language Processing"</a>, K M Annervaz*, Somnath Basu Roy Chowdhury* and Ambedkar Dukkipati. Proceedings of the <b>16th Annual Conference of the North American Chapter of the Association for Computational Linguistics : Human Language Technologies (NAACL HLT, 2018)</b>, at New Orleans, USA. <font color="red">(<i>Oral, Long Paper</i>)</font>.</li>
-                 <li><span class="label label-success">AAAI '18</span> <a target="_blank" href="https://www.aaai.org/ocs/index.php/AAAI/AAAI18/paper/view/16451/16478">"AdGAP: Advanced
-                Global Average Pooling"</a>, Arna Ghosh, Biswarup Bhattacharya* and Somnath Basu Roy Chowdhury*. Proceedings of the <b>32nd AAAI Conference on Artificial Intelligence (AAAI-18)</b>, at New Orleans, USA. <font color="red">(<i>Student Abstract</i>)</font>.</li>
-                <li><span class="label label-success">AAAI '18</span> <a target="_blank" href="https://www.aaai.org/ocs/index.php/AAAI/AAAI18/paper/view/16453/16462">"Training Autoencoders in Sparse Domain"</a>, Biswarup Bhattacharya, Arna Ghosh* and Somnath Basu Roy Chowdhury*. Proceedings of the <b>32nd AAAI Conference on Artificial Intelligence (AAAI-18)</b>, at New Orleans, USA. <font color="red">(<i>Student Abstract</i>)</font>.</li>
-                <li><span class="label label-success">AAAI '17</span> <a target="_blank" href="https://arxiv.org/abs/1611.08789">"Handwriting Profiling using Generative Adversarial Networks"</a>,  Arna Ghosh*, Biswarup Bhattacharya* and Somnath Basu Roy Chowdhury*. Proceedings of the <b>31st AAAI Conference on Artificial Intelligence (AAAI-17)</b>, at San Francisco, USA. <font color="red">(<i>Student Abstract</i>)</font>.</li>
-                <li><span class="label label-success">NIPS '16</span> <a target="_blank" href="https://arxiv.org/abs/1611.08788">"SAD-GAN: Synthetic Autonomous Driving using Generative Adversarial Networks"</a>, Arna Ghosh*, Biswarup Bhattacharya*  and Somnath Basu Roy Chowdhury*. Proceedings of the <b>30th  Neural Information Processing Systems (NIPS-16)</b>, Deep Learning for Action and Interaction Workshop at Barcelona, Spain. 
-                 
-            </ul>
-            <p><a target="_blank" href="https://scholar.google.co.in/citations?user=xGbyrIUAAAAJ&hl=en" class="btn btn-primary">All Publications &raquo;</a>
-            </p>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<hr class="star-primary">
-<footer>
-    <small>
-    <center>
-        © 2020 | Somnath Basu Roy Chowdhury. Credits: AR template
-    <!--  -->
-    </center>
-    </small>
-</footer>
+
+    <!-- Research Section -->
+    <section id="organization">
+        <div class="container lead">
+            <div style="text-align: left; margin-top:10px" class="col-md-12">
+                <hr class="star-primary">
+                <h2>Organizations</h2><br>
+                <img id="mobile-img" src="images/microsoft.png" border="0" height="160" alt=""
+                    style="margin: 2% -0px 10px 10px">
+                <img id="mobile-img" src="images/apple.png" border="0" height="200" alt="" style="margin: 0px 10px">
+                <img id="mobile-img" src="images/iitkgp.png" border="0" height="200" alt="" style="margin: 0px 10px">
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="publications">
+        <div class="container lead">
+            <div style="text-align: left; margin-top:10px" class="col-md-12">
+
+                <i class="noshow" style="display:none;" id="tab-3">
+                    <button class="btn btn-default btn-lg btn-block" style="display: block; width: 100%;"
+                        onclick="javascript:$('#tab-3-content').toggle();">Publications <span
+                            class="glyphicon glyphicon-chevron-right"></span></button>
+                </i>
+                <div class="allshow" style="display:none;" id="tab-3-content">
+                    <hr class="star-primary">
+
+
+
+                    <h2>Selected Publications <a target="_blank"
+                            href="https://scholar.google.co.in/citations?user=xGbyrIUAAAAJ&hl=en"
+                            class="btn btn-primary">All Publications&raquo;</a></h2>
+                    <h4>
+                        <span class="label label-danger">
+                            <a target="_blank" href="https://en.wikipedia.org/wiki/H-index">
+                                <font color=white>h-index</font>
+                            </a>: 3
+                        </span>&nbsp;
+                        <span class="label label-danger">
+                            <a target="_blank" href="https://scholar.google.com/citations?user=HCxwGIkAAAAJ&hl=en">
+                                <font color=white>Citations</font>
+                            </a>: 40
+                        </span>&nbsp;
+                        <span class="label label-danger">
+                            <a target="_blank" href="https://en.wikipedia.org/wiki/Erd&ouml;s_number">
+                                <font color="white">Erd&ouml;s #</font>
+                            </a>: 5
+                        </span>
+                    </h4>
+
+                    <ul>
+                        <li><span class="label label-success">EMNLP '19</span> <a target="_blank"
+                                href="https://arxiv.org/pdf/1802.05934.pdf">"Instance-based Inductive Deep Transfer
+                                Learning by
+                                Cross-Dataset Querying with Locality Sensitive Hashing"</a>, Somnath Basu Roy Chowdhury,
+                            K M Annervaz and Ambedkar Dukkipati. Proceedings of <b>DeepLo Workshop EMNLP 2019</b>, at
+                            Hong Kong. <font color="red">(<i>Long Paper</i>)</font>.</li>
+                        <li><span class="label label-success">NAACL-HLT '18</span> <a target="_blank"
+                                href="http://aclweb.org/anthology/N18-1029">"Learning beyond datasets: Knowledge Graph
+                                Augmented Neural Networks for Natural language Processing"</a>, K M Annervaz*, Somnath
+                            Basu Roy Chowdhury* and Ambedkar Dukkipati. Proceedings of the <b>16th Annual Conference of
+                                the North American Chapter of the Association for Computational Linguistics : Human
+                                Language Technologies (NAACL HLT, 2018)</b>, at New Orleans, USA. <font color="red">
+                                (<i>Oral, Long Paper</i>)</font>.</li>
+                        <li><span class="label label-success">AAAI '18</span> <a target="_blank"
+                                href="https://www.aaai.org/ocs/index.php/AAAI/AAAI18/paper/view/16451/16478">"AdGAP:
+                                Advanced
+                                Global Average Pooling"</a>, Arna Ghosh, Biswarup Bhattacharya* and Somnath Basu Roy
+                            Chowdhury*. Proceedings of the <b>32nd AAAI Conference on Artificial Intelligence
+                                (AAAI-18)</b>, at New Orleans, USA. <font color="red">(<i>Student Abstract</i>)</font>.
+                        </li>
+                        <li><span class="label label-success">AAAI '18</span> <a target="_blank"
+                                href="https://www.aaai.org/ocs/index.php/AAAI/AAAI18/paper/view/16453/16462">"Training
+                                Autoencoders in Sparse Domain"</a>, Biswarup Bhattacharya, Arna Ghosh* and Somnath Basu
+                            Roy Chowdhury*. Proceedings of the <b>32nd AAAI Conference on Artificial Intelligence
+                                (AAAI-18)</b>, at New Orleans, USA. <font color="red">(<i>Student Abstract</i>)</font>.
+                        </li>
+                        <li><span class="label label-success">AAAI '17</span> <a target="_blank"
+                                href="https://arxiv.org/abs/1611.08789">"Handwriting Profiling using Generative
+                                Adversarial Networks"</a>, Arna Ghosh*, Biswarup Bhattacharya* and Somnath Basu Roy
+                            Chowdhury*. Proceedings of the <b>31st AAAI Conference on Artificial Intelligence
+                                (AAAI-17)</b>, at San Francisco, USA. <font color="red">(<i>Student Abstract</i>)</font>
+                            .</li>
+                        <li><span class="label label-success">NIPS '16</span> <a target="_blank"
+                                href="https://arxiv.org/abs/1611.08788">"SAD-GAN: Synthetic Autonomous Driving using
+                                Generative Adversarial Networks"</a>, Arna Ghosh*, Biswarup Bhattacharya* and Somnath
+                            Basu Roy Chowdhury*. Proceedings of the <b>30th Neural Information Processing Systems
+                                (NIPS-16)</b>, Deep Learning for Action and Interaction Workshop at Barcelona, Spain.
+
+                    </ul>
+                    <p><a target="_blank" href="https://scholar.google.co.in/citations?user=xGbyrIUAAAAJ&hl=en"
+                            class="btn btn-primary">All Publications &raquo;</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="star-primary">
+    <footer>
+        <small>
+            <center>
+                © 2020 | Somnath Basu Roy Chowdhury. Credits: AR template
+                <!--  -->
+            </center>
+        </small>
+    </footer>
 
 </body>
 
