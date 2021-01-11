@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>[Somnath Basu Roy Chowdhury]</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../images/light-bulb.png">
+
+<link rel="stylesheet" href="../css/font-awesome.min.css">
+
+<!-- Bootstrap -->
+<link href="../css/bootstrap.min.css" rel="stylesheet">
+<!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../js/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/menucollapse.js"></script>
+<script type="text/javascript" src="../js/arrow78.js"></script>
+<script type="text/javascript" src="../js/custom.js"></script>
+
+
+  <title>Blogs</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+
+
+<style>
+
+    h2 {
+        text-align: center;
+        margin-bottom: 30px;
+        color: #525354;
+        font-family:Lucida Sans Unicode;
+    }
+
+    h3 {
+        margin-bottom: 20px;
+        color: #525354;
+        font-family:Lucida Sans Unicode;
+    }
+
+    body {
+        background-color: #f7f6f5;
+
+    }
+
+</style>
+</head>
+
+<body>
+
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"  data-target="#bs-example-navbar-collapse-2" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                    <button id="button2" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- <span><a href="#"><img border="0" width="170" src="images/csucy.png"/></a></span> -->
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="margin-right: 5%;">
+                    
+                       
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="page-scroll">
+                            <a onclick="javascript:reset_menus();$('#tab-news-content').show();" href="/index.html" style="font-size:16px">Home</a>
+                        </li>
+                        <li class="page-scroll">
+                            <a onclick="javascript:reset_menus();$('#tab-news-content').show();" href="/blogs.html" style="font-size:16px">Blog</a>
+                        </li>
+                    </ul>
+                </div>
+        
+                <!-- search box submenu --> 
+                <div class="collapse" id="bs-example-navbar-collapse-2">
+                    <gcse:search></gcse:search>
+                </div>
+        
+            </div><!-- /.container-fluid -->
+    </nav>
+
+    <section>
+            <!-- Place this tag where you want the search results to render -->
+            <gcse:searchresults-only></gcse:searchresults-only>
+    </section>
+
+
+    <section id="home" style="padding-top: 40px; margin-left: 22%; margin-right: 22%; 
+     height: 100vh; padding: 3%; background-color: #f8f8f8;">
+        <div>
+            <h2>
+                Jensen-Shannon (JS) Divergence
+            </h2>
+
+            Jensen-Shannon divergence is a measure of how similar two probability distributions \(p\) and \(q\) are.
+            This divergence measure is a modification of the KL divergence measure (refer to my previous 
+            <a href="https://brcsomnath.github.io/blogs/dv-lower-bound.html">blog</a> for details). Jensen-Shannon
+            overcomes few of the major limitation of the KL divergence. JS divergence is symmetric and always has a finite 
+            value.
+    
+            
+            <h3>References</h3>
+            <ul>
+                <li><a href="https://arxiv.org/pdf/1811.04251.pdf">Formal Limitations on The Measurement of
+                        Mutual Information</a></li>
+                <li><a href="https://web.stanford.edu/class/stats311/lecture-notes.pdf">Stanford Statistics Lecture notes</a></li>
+            </ul>
+        </div>
+    </section>
+</body>
+</html>
