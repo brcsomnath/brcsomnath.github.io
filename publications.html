@@ -47,22 +47,23 @@
         });
     </script>
     <script type="text/JavaScript">
-    //courtesy of BoogieJack.com
-    function killCopy(e){
-    return false
-    }
-    function reEnable(){
-    return true
-    }
-    document.onselectstart=new Function ("return false")
-    if (window.sidebar){
-    document.onmousedown=killCopy
-    document.onclick=reEnable
-    }
-    $("body").on("contextmenu",function(e){
-        return false;
-    });
-</script>
+
+        //courtesy of BoogieJack.com
+        function killCopy(e){
+        return false
+        }
+        function reEnable(){
+        return true
+        }
+        document.onselectstart=new Function ("return false")
+        if (window.sidebar){
+        document.onmousedown=killCopy
+        document.onclick=reEnable
+        }
+        $("body").on("contextmenu",function(e){
+            return false;
+        });
+    </script>
 
 <body id="page-top" class="index" style="zoom: 90%;">
     <!-- Navigation -->
@@ -142,10 +143,7 @@
 
 
                     <h2 style="display: inline;">Publications</h2>
-                    <!-- <p style="display: inline;"><a target="_blank"
-                            href="https://scholar.google.co.in/citations?user=xGbyrIUAAAAJ&hl=en"
-                            class="btn btn-primary" style="font-size: 12pt;">Google Scholar &raquo;</a>
-                    </p><br> -->
+                    <b>[<a href="publications_by_year.html">By Year</a>]</b>
                     <p style="margin-bottom:1em;"></p>
                     <p>Below is a list of my recent publications categorized by topic. For a more complete list, please
                         visit my <a target="_blank"
@@ -154,7 +152,7 @@
                     <p style="margin-bottom:2em;"></p>
 
                     <h3 style="font-weight: bolder;">Robust & Trustworthy Machine Learning</h3>
-                    <ul>
+                    <ul style="padding: 5pt; list-style: none;">
                         <li>
                             <span style="font-weight:bolder">
                                 Enhancing Group Fairness in Online Settings Using Oblique Decision Forests</span> <br>
@@ -253,7 +251,18 @@
                         </li><br>
                     </ul>
                     <h3 style="font-weight: bolder;">Efficient Machine Learning</h3>
-                    <ul>
+                    <ul style="padding: 5pt; list-style: none;">
+                        <li>
+                            <span style="font-weight:bolder">Embodied AI with Two Arms: Zero-shot Learning, Safety and
+                                Modularity</span> <br>
+                            <span style="font-size:0.88em">Jake Varley*, Sumeet Singh*, Deepali Jain*, Krzysztof
+                                Choromanski*, Andy
+                                Zeng, <u style="text-underline-position: under">Somnath Basu Roy
+                                    Chowdhury</u>, Avinava Dubey, <br> Vikas Sindhwani. [Preprint 2024]<br>
+                                <a href="https://arxiv.org/pdf/2404.03570.pdf" target="_blank"><span
+                                        class="label label-primary">pdf</span></a>
+                                <span class="label label-success">long</span></span>
+                        </li><br>
                         <li>
                             <span style="font-weight:bolder">
                                 Efficient Graph Field Integrators Meet Point Clouds </span> <br>
@@ -262,7 +271,7 @@
                                 Likhosherstov, <u style="text-underline-position: under">Somnath Basu Roy Chowdhury</u>,
                                 Avinava Dubey, Deepali Jain, Tamas Sarlos,
                                 Snigdha Chaturvedi, Adrian Weller. <br></span>
-                            <span style="font-size:0.93em">Proceedings of ICML, 2023. <br>
+                            <span style="font-size:0.88em">Proceedings of ICML, 2023. <br>
                                 <a href="https://arxiv.org/pdf/2302.00942.pdf" target="_blank"><span
                                         class="label label-primary">pdf</span></a>
                                 <a href="https://github.com/topographers/" target="_blank"><span
@@ -275,7 +284,7 @@
                         </li><br>
                     </ul>
                     <h3 style="font-weight: bolder;">Scalable Data Summarization</h3>
-                    <ul>
+                    <ul style="padding: 5pt; list-style: none;">
                         <li>
                             <span style="font-weight:bolder">
                                 Incremental Extractive Opinion Summarization Using Cover Trees </span> <br>
@@ -362,7 +371,7 @@
                         </li><br>
                     </ul>
                     <h3 style="font-weight: bolder;">Additional Topics</h3>
-                    <ul>
+                    <ul style="padding: 5pt; list-style: none;">
 
                         <li>
                             <!-- <span class="label label-success">EMNLP '21</span>  -->
@@ -406,9 +415,7 @@
                     <h3 style="font-weight: bolder; display: inline;">Data Efficient Learning</h3> (before PhD)<br>
                     <p style="margin-bottom:.3cm;"></p>
 
-                    <!-- <p style="display: inline;"></p><br> -->
-
-                    <ul>
+                    <ul style="padding: 5pt; list-style: none;">
                         <li>
                             <span style="font-weight: bolder;">Learning beyond datasets: Knowledge Graph Augmented
                                 Neural Networks for Natural Language` Processing</span><br>
@@ -436,9 +443,9 @@
                                         class="label label-warning">code</span></a>
                                 <span class="label label-success">long</span></span>
                         </li><br>
-                        (* = equal contribution)
                     </ul>
 
+                    <span style="font-size:0.88em">(* = equal contribution)</span>
                 </div>
             </div>
         </div>
