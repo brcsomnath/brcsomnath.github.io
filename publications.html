@@ -46,24 +46,6 @@
             });
         });
     </script>
-    <script type="text/JavaScript">
-
-        //courtesy of BoogieJack.com
-        function killCopy(e){
-        return false
-        }
-        function reEnable(){
-        return true
-        }
-        document.onselectstart=new Function ("return false")
-        if (window.sidebar){
-        document.onmousedown=killCopy
-        document.onclick=reEnable
-        }
-        $("body").on("contextmenu",function(e){
-            return false;
-        });
-    </script>
 
 <body id="page-top" class="index" style="zoom: 90%;">
     <!-- Navigation -->
@@ -323,10 +305,10 @@
                             <span style="font-weight:bolder">
                                 Fast Tree-Field Integrators: From Low Displacement Rank to Topological
                                 Transformers</span> <br>
-                            <span style="font-size:0.88em">Krzysztof Choromanski, Arijit Sehanobish, <u
+                            <span style="font-size:0.88em">Krzysztof Choromanski*, Arijit Sehanobish*, <u
                                     style="text-underline-position: under">
                                     Somnath Basu Roy
-                                    Chowdhury</u>, Han Lin, Avinava Dubey, Tamas Sarlos, Snigdha Chaturvedi.<br>
+                                    Chowdhury*</u>, Han Lin*, Avinava Dubey, Tamas Sarlos, Snigdha Chaturvedi.<br>
                                 Proceedings of NeurIPS, 2024. <br>
                                 <a href="https://arxiv.org/pdf/2406.15881" target="_blank"><span
                                         class="label label-primary">pdf</span></a>
