@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>[Somnath Basu Roy Chowdhury]</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/light-bulb.png">
+
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/menucollapse.js"></script>
+    <script type="text/javascript" src="../js/arrow78.js"></script>
+    <script type="text/javascript" src="../js/custom.js"></script>
+
+
+    <title>Blogs</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+
+
+    <style>
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #525354;
+            font-family: Lucida Sans Unicode;
+        }
+
+        h3 {
+            margin-bottom: 20px;
+            color: #525354;
+            font-family: Lucida Sans Unicode;
+        }
+
+        body {
+            background-color: #f7f6f5;
+
+        }
+
+        .circle {
+            display: inline-block;
+            width: 12px;
+            /* Adjust size as needed */
+            height: 12px;
+            background-color: pink;
+            border-radius: 50%;
+            border: 1px solid black;
+            /* Black border */
+        }
+
+        .numbered-list {
+            list-style: none;
+            /* Remove default bullets */
+            counter-reset: list-counter;
+            /* Initialize counter */
+        }
+
+        .numbered-list li {
+            counter-increment: list-counter;
+            /* Increase counter */
+        }
+
+        .numbered-list li::before {
+            content: "[" counter(list-counter) "] ";
+            color: inherit;
+            /* Ensure it inherits from the closest parent */
+            display: inline;
+            /* Make it behave like normal text */
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-2" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="glyphicon glyphicon-search"></span>
+                </button>
+                <button id="button2" type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- <span><a href="#"><img border="0" width="170" src="images/csucy.png"/></a></span> -->
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="margin-right: 5%;">
+
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="page-scroll">
+                        <a onclick="javascript:reset_menus();$('#tab-news-content').show();" href="/index.html"
+                            style="font-size:16px">Home</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a onclick="javascript:reset_menus();$('#tab-news-content').show();" href="/blogs.html"
+                            style="font-size:16px">Blog</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- search box submenu -->
+            <div class="collapse" id="bs-example-navbar-collapse-2">
+                <gcse:search></gcse:search>
+            </div>
+
+        </div><!-- /.container-fluid -->
+    </nav>
+
+    <section>
+        <!-- Place this tag where you want the search results to render -->
+        <gcse:searchresults-only></gcse:searchresults-only>
+    </section>
+
+
+    <section id="home" style="padding-top: 40px; margin-left: 22%; margin-right: 22%; 
+     height: 100vh; padding: 3%; background-color: #f8f8f8;">
+        <div>
+            <h1>
+                Understanding the Limits of Concept Erasure
+            </h1>
+            <br><br>
+            <p>
+
+                In this blog, I provide a more accessible version of my recent <a href="">paper</a> on
+                perfect concept erasure. The paper explores the task of concept erasure that aims to erase a particular
+                concept
+                from a set of data representations. First, we introduce the task, and then we explore the solution for
+                achieving perfect erasure in greater detail.
+            </p>
+
+            <h3>What is Concept Erasure?</h3>
+            <p>
+                Concept erasure is the process of erasing a specific concept (e.g., gender of the author) from a set of
+                data
+                representations (e.g., representations of texts written by different authors). The goal of concept
+                erasure
+                is to generate modified (or erased) data representations from which the concept cannot be inferred. This
+                is
+                useful in applications where the data owner is selling data representations (e.g., LLM representations)
+                to
+                customers but doesn't want to disclose private user information. Concept erasure has also been used to
+                improve the
+                fairness of machine learning systems.
+            </p>
+
+            <p>Please note that in this context, "concept" refers to any
+                information that is associated with each representation and can be modeled as a random variable, rather
+                than a specific fact or piece of information.
+                The term "concept erasure" is relatively new and was popularized by these papers [<a href="#lce">1</a>,
+                <a href="#kce">2</a>, <a href="#kram">3</a>]. However, the underlying task has been studied under
+                different names, such as perfect privacy [<a href="#pp">4</a>], fair representation learning [<a
+                    href="#alr">5</a>], etc.
+
+            </p>
+
+            <h3>Formalizing Concept Erasure</h3>
+
+            <p>In concept erasure, we are interested in three random variables -- the original data representations
+                \(X\) (with
+                support \(\mathcal{X}\)), the concept to be erased \(A\) (with support \(\mathcal A\)), and
+                representations
+                after erasure \(Z\) (with support \(\mathcal Z\)). In our work, we consider only categorical concept
+                variables such as gender (see the full list of Assumptions in our <a href="">paper</a>). The erased
+                representations \(Z\) is generated using a function of the original data: \(Z=f(X)\), and the goal of
+                concept erasure is to find the optimal erasure function, \(f\).</p>
+
+            <p>The formal version of the concept erasure objective is shown below:
+
+                \[\max_f I(Z; X), \text{ subject to } I(Z; A) < \epsilon.\] The above objective shows that the objective
+                    of concept erasure is two-fold: (a) retain maximum utility with the original representations
+                    (captured by mutual information \(I(Z; X)\)) and (b) effectively erase the concept (captured by
+                    mutual information \(I(Z; A)\)). Note that while we use mutual information in our work, other
+                    dependency measures can also be used. </p>
+
+                    <p>
+                        Based on the above objective, we ask two key research questions: <br>
+                        <b>(RQ1)</b> What is the maximum utility
+                        that can be retained (maximum \(I(Z; X)\)) while perfectly erasing a concept (achieving \(I(Z;A)
+                        = 0\))? <br>
+                        <b>(RQ2)</b> What kind of erasure functions \(f\) achieve the above limits?<br><br>
+                        In the following sections, we will answer the above questions.
+                    </p>
+                    <br>
+                    <h3>Fundamental Limits of Concept Erasure</h3>
+
+                    <p>
+                        It turns out that the answer to <b>(RQ1)</b> is already known in the information theory
+                        literature [<a href="#pic">6</a>]. Without delving into the details, using a privacy funnel
+                        framework (shown by the funnel structure in the plot below), we can characterize the lower bound
+                        of privacy, \(I(Z;A)\), for any given utility, \(I(Z;X)\) (for a more technically precise
+                        characterization, refer to our paper).
+                    <div style="text-align: center;">
+                        <img src="../images/pef_tradeoff.png" alt="" height="40%" width="40%"><br>
+                        Figure 1. Privacy Funnel plot.
+                    </div>
+
+            </p>
+            <p>
+                In the above plot, the <span style="color: green;"><b>green</b></span> line indicates the minimum
+                achievable privacy for any utility. We characterize this line into two regions: <b>perfect
+                    erasure</b>
+                (where it is possible to have \(I(Z; A)=0\)) and <b>relaxed erasure</b> (where \(I(Z; A)>0\) but the
+                optimal \(I(Z; A)\) is achieved). The ⭐ indicates the point where the utility is maximized under
+                perfect erasure. This means the maximum attainable utility is \(I(Z; X)=H(X|A)\), providing the
+                answer to <b>(RQ1)</b>.</p>
+
+            <p>
+                Before moving to erasure functions, we need to ask one more question. Is it possible to achieve the
+                best utility \(I(Z; X)=H(X|A)\) during perfect erasure for any data \((X, A)\)?
+                <!-- To answer this question,
+                let us first recall that our concept variable is categorical. This means it is possible to divide the
+                original representation space based on the concept each representation belongs to: \(\mathcal X =
+                \bigcup_i \mathcal X_i\).  -->
+                This brings us to one of
+                the key results from our paper:<br><br>
+
+                <b>Theorem 1</b> (informal). The best utility is achieved during perfect erasure if only if
+                the distributions of
+                different representation groups are permutations of each other, \(\forall (i, j), P(X|A=a_i) =
+                \sigma(P(X|A=a_j))\).
+            </p>
+            A visual illustration of the above result is shown in the figure below.
+            <div style="text-align: center;">
+                <img src="../images/permutations.png" alt="" height="60%" width="60%"><br>
+                Figure 2. Illustration of data conditions for perfect erasure. In this example, there are 3 concept
+                groups, and the representations for each group are sampled from distributions \(P_1, P_2, P_3\)
+                respectively. These distributions are permutations of each other.
+            </div>
+            <br>
+            <h3>Perfect Erasure Functions</h3>
+
+            <p>
+                In the previous sections, we have explored the mutual information limits of concept erasure and
+                established
+                the conditions
+                necessary to achieve them. We can now study the erasure functions that attain these limits. We will
+                share
+                the optimal erasure functions in two settings: <br>
+                <b>[E1]</b> When the conditions in Theorem 1 are satisfied and best
+                utility (⭐ in the plot) is achievable, and <br>
+                <b>[E2]</b> When Theorem 1's conditions are violated and we can only
+                achieve a suboptimal utility ( <span class="circle"></span> \(J(\hat Q)\) in the plot).
+            </p>
+
+            <p>Before describing the erasure functions, let us try to intuitively understand the role of these
+                functions. Intuitively, if representations are sampled from three different distributions (or underlying
+                concept groups) as shown in Figure 2, erasing the concept requires transforming these samples so that
+                they appear to come
+                from the same distribution.
+            </p>
+
+            <p>If the conditions in Theorem 1 are satisfied, an illustration of the erasure function <b>[E1]</b> is
+                shown
+                below (where \(Q\) is the distribution of \(Z\)). In this setup, the erasure function maps elements with
+                equal probability of occurence (\(p=0.1\)
+                in Figure 3) from
+                different groups to an element of a common distribution that has the same probability (\(p=0.1\)). The
+                erasure function transports elements with other probabilities in a similar manner. For clarity, we do
+                not show them in this figure. You can also find the exact analytical form for the corresponding function
+                in the paper.</p>
+
+            <div style="text-align: center;">
+                <img src="../images/e1.png" alt="" height="60%" width="60%"><br>
+                Figure 3. Perfect erasure function <b>[E1]</b> when the distributions are permutations of each other
+                (Theorem 1 is
+                satisfied).
+            </div>
+            <br>
+
+            <p>Given the form of the erasure function in Figure 3, if you think for a while it is easy to observe for
+                any distribution that \(H(A)=H(A|Z=z)\). This means that \(I(Z; A)=0\) and no information about the
+                concept \(A\) can be inferred from \(Z\).</p>
+
+            <p>Next, if the conditions of Theorem 1 are violated, we introduce the erasure function <b>[E2]</b>. In this
+                setting, the erasure function \(f\) is a piece-wise function mapping elements from each concept group to
+                a common support. There are two components that we need to quantify to fully characterize \(f\). First,
+                the distribution \(Q\) and individual components of the piece-wise function. First, we can find \(Q\) by
+                solving the optimization problem shown in the figure (refer to our paper for more details). Second, once
+                we know \(Q\), the piece-wise erasure function is the minimum entropy coupling (MEC)
+                \(\Gamma_{\mathrm{MEC}}(P_i, \hat{Q})\) between the conditional distribution \(P_i = P(X|A=a_i)\) and
+                \(\hat
+                Q\) (see our paper for the complete proof). Given two distributions, the MEC
+                minimizes the entropy of the resulting joint distribution and can be closely approximated using a greedy
+                algorithm. The overall setup is shown in Figure 4.
+            </p><br>
+
+            <div style="text-align: center;">
+                <img src="../images/e2.png" alt="" height="75%" width="75%"><br>
+                Figure 4. Perfect erasure function <b>[E2]</b> when the distributions are unequal
+                (Theorem 1 is
+                violated).
+            </div>
+            <br>
+            <h3>Algorithm for Perfect Erasure</h3>
+
+            Now, we know the erasure functions that achieve perfect erasure under different setting. Given a set of
+            representation and concept samples, we summarize the
+            overall erasure process below:
+
+            <ul>
+                <li>Representation samples: \(\mathcal S = \{x_1, x_2, \ldots \}\) and corresponding concept samples
+                    \(\mathcal G = \{a_1, a_2, \ldots \}\)</li>
+                <li>Estimate the distribution for each group using KDE, \(P_i = \mathrm{EstimateDistribution}(\mathcal
+                    S_i)\) <span style="color: gray;">(where \(\mathcal S_i \) is the sample set for the \(i\)-th
+                        group)</span></li>
+                <li>Check if \(P_i\)'s satisfy Theorem 1 </li>
+                <li>If yes, use <b>[E1]</b> to obtain \(\mathcal O=f(\mathcal S)\) <span style="color: gray;">(shown in
+                        Figure 3)</span>
+                </li>
+                <li>If no, use <b>[E2]</b> to obtain \(\mathcal O=f(\mathcal S)\) <span style="color: gray;">(shown in
+                        Figure 4)</span>
+                </li>
+            </ul>
+            <br>
+
+            <h3>Empirical Results & Challenges</h3>
+
+            <p>We perform experiments to evaluate whether the proposed erasure functions (denoted by PEF in the results)
+                achieve the theoretical limits. We use \(\mathcal V\)-information to estimate mutual information using a
+                classifier. Since we can get more accurate estimates in a synthetic setup, our first set of experiments
+                evaluates PEF in a synthetic setting. Specifically, we use 2 concept groups and sample 3D
+                representations from 2 different distributions. We randomly sample the supports of these distributions
+                using a uniform distribution. The final representations are sampled by using either a uniform or
+                Gaussian distribution defined on the supports.
+            </p>
+
+            <p>In Figure 5, we report the results of erasure using equal uniform or Gaussian distributions (where
+                Theorem 1 is satisfied) or unequal distributions. The black lines showcasing a funnel structure indicate
+                the theoretical values for the privacy funnel. We observe that perfect erasure functions (PEF) achieves
+                the theoretically optimal values when the distributions are equal up to permutation, which is expected.
+                For unequal distributions, PEF achieves high utility but still falls short of the point, \(I(Z; X) =
+                H(X|A)\). It is interesting to note that in this setting existing erasure techniques is either able to
+                perfectly erase concepts but lose all utility and vice-versa.
+            </p>
+
+            <div style="text-align: center;">
+                <img src="../images/synthetic.png" alt="" height="90%" width="90%"><br>
+                Figure 5. Empirical Privacy Funnel plot on synthetic data for erasure using PEF and other baselines.
+            </div>
+            <br>
+            <p>
+                Next, we evaluate PEF in real-world settings where some of the assumptions made in our theoretical
+                analysis
+                do not hold such as representations may not be sampled from a finite support set, underlying
+                distributions
+                are unknown, etc. In this experiment, we perform toxicity classification of Youtube comments from the
+                Jigsaw dataset. We obtain text representations from GPT-4, which are then fed to classifier to determine
+                if it's toxic or not. However, we do not want the religion of the author to influence the toxicity
+                results. Therefore, we first erasure religion information using different erasure techniques and then
+                use the erased representations for toxicity classification.</p>
+
+            <div style="text-align: center;">
+                <img src="../images/gpt.png" alt="" height="35%" width="35%"><br>
+                Figure 6. Fairness-accuracy trade-off for toxicity classification using GPT4-representations after
+                erasure using PEF and baseline erasure techniques.
+            </div><br>
+
+            <p>In Figure 6, we report the final fairness-utility trade-offs for this experiment. We observe that PEF
+                achieve the best trade-off (top-right is idea), significantly improving the fairness of original
+                representations while being
+                competitive with other erasure
+                techniques. </p>
+
+            <h4>Practical Challenges</h4>
+
+            Although theoretically sound, there are several challenges involved in successfully applying PEFs in
+            practical
+            applications. These include:<br>
+
+            <ul>
+                <li><b>Prior Knowledge of Distributions</b>. Construction of the erasure functions require exact
+                    knowledge of the representations' distributions. In practice, we only have access samples from the
+                    distribution and estimate the distribution using techniques like KDE. It would be interesting to
+                    observe the erasure performance in cases where the estimation quality is poor.</li>
+                <li><b>Generalization</b>. Similar to the last challenge, as the erasure function construction requires
+                    exact knowledge of the distribution, we need to know the representation support set in advance.
+                    This would mean that it may not be possible to map an unseen sample. However, there are some
+                    practical solutions for this problem. We can use nearest neighbour approach to identify a sample in
+                    the training set and use its corresponding mapping, or re-estimate the overall distribution once we
+                    have access to the test set.
+                </li>
+            </ul>
+
+            Overall, there seems to be a trade-off between theoretically perfect concept erasure and its generalization
+            ability. As the former requires exact knowledge of the distributions that as often unavailable in practice.
+            Even with these challenges, we find that PEF can perfectly erase concepts in small-scale
+            setups significantly outperforming baseline approaches.
+
+            <h3>References</h3>
+            <ul class="numbered-list">
+                <li id="lce"><a href="https://proceedings.mlr.press/v162/ravfogel22a/ravfogel22a.pdf">Linear
+                        Adversarial
+                        Concept
+                        Erasure</a></li>
+                <li id="kce"><a href="https://aclanthology.org/2022.emnlp-main.405.pdf">Kernelized Concept
+                        Erasure</a>
+                </li>
+                <li id="kram"><a
+                        href="https://proceedings.neurips.cc/paper_files/paper/2023/file/86bd650f85480c595ecab29081a3774e-Paper-Conference.pdf">Robust
+                        Concept Erasure via Kernelized
+                        Rate-Distortion Maximization</a></li>
+                <li id="pp"><a href="https://ieeexplore.ieee.org/abstract/document/7282765/">Fundamental Limits
+                        of
+                        Perfect Privacy</a></li>
+                <li id="alr"><a href="https://proceedings.mlr.press/v97/bertran19a.html">Adversarially Learned
+                        Representations for Information Obfuscation and Inference
+                    </a></li>
+                <li id="pic"><a href="https://arxiv.org/abs/1704.00820">Principal Inertia Components and Applications
+                    </a></li>
+            </ul>
+    </section>
+</body>
+
+</html>
