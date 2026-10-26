@@ -110,3 +110,32 @@ body {
 li{
 	margin: 10px 0;
 }
+
+/* ---------- Mobile friendliness ---------- */
+
+/* Make images shrink with the viewport (incl. the profile photo) */
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+/* Side margins for the home section, moved here from index.html so they can adapt */
+#home {
+	margin-top: 60px;
+	margin-left: 15%;
+	margin-right: 15%;
+}
+
+@media (max-width: 767px) {
+	/* Let content breathe on phones */
+	#home {
+		margin-left: 5%;
+		margin-right: 5%;
+	}
+
+	/* Smaller nav links so the collapsed menu fits comfortably */
+	.navbar-nav > li > a {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+}
