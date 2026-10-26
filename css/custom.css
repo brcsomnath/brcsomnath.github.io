@@ -111,6 +111,17 @@ li{
 	margin: 10px 0;
 }
 
+/* Sticky footer: keep the footer pinned to the viewport bottom on short pages */
+body {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+footer {
+	margin-top: auto;
+}
+
 /* ---------- Mobile friendliness ---------- */
 
 /* Make images shrink with the viewport (incl. the profile photo) */
